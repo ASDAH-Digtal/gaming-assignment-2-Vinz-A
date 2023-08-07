@@ -8,5 +8,3 @@ script = ExtResource("1_1l5ro")
 
 [node name="Level_1" parent="." instance=ExtResource("2_chpq3")]
 position = Vector2(14, -16)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
