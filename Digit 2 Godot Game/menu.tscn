@@ -40,16 +40,26 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "          Jumping 4 Rubbish Game         1"
+text = "          Jumping 4 Rubbish Game         "
 horizontal_alignment = 1
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Play"
 
+[node name="Controls" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Controls"
+
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
