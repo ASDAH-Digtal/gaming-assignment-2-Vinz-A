@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cnwfgr084qr8a"]
+[gd_scene load_steps=15 format=3 uid="uid://cnwfgr084qr8a"]
 
 [ext_resource type="Texture2D" uid="uid://b6htwrf2vu5na" path="res://Ugly clouds.png" id="1_8rc6s"]
 [ext_resource type="Texture2D" uid="uid://dap84ywmahxqd" path="res://Art/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_m2tbg"]
+[ext_resource type="Script" path="res://level.gd" id="1_r4xfn"]
 [ext_resource type="PackedScene" uid="uid://qs11q1ii6cwu" path="res://player.tscn" id="2_7acbx"]
 [ext_resource type="Texture2D" uid="uid://wkkhkvwa82a1" path="res://Grass block (original).png" id="3_65o5p"]
 [ext_resource type="Texture2D" uid="uid://dolumjixrfhhs" path="res://Dirt (Ugly still).png" id="4_cbi5i"]
@@ -1492,6 +1493,7 @@ sources/2 = SubResource("TileSetAtlasSource_jr5qb")
 size = Vector2(20, 30.5)
 
 [node name="Level_1" type="Node2D"]
+script = ExtResource("1_r4xfn")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -1459.0
@@ -1556,5 +1558,7 @@ position = Vector2(-730.645, -512.647)
 
 [node name="apple7" parent="." instance=ExtResource("8_xsndx")]
 position = Vector2(204.003, 4.01416)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [connection signal="body_entered" from="door" to="Player" method="_on_door_body_entered"]

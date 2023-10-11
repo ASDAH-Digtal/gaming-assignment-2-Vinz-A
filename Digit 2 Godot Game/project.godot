@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Digit_2_Game"
-run/main_scene="res://level.tscn"
-config/features=PackedStringArray("4.0", "Mobile")
+config/name="Digit 2 Godot Game"
+run/main_scene="res://menu.tscn"
+config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
@@ -50,4 +50,3 @@ jump={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="mobile"
