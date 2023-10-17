@@ -66,3 +66,7 @@ func _on_door_body_entered(body):
 func _on_door_2_body_entered(body):
 	get_tree().change_scene_to_file("res://level_3.tscn")
 
+
+
+func _on_next_level_2_pressed():
+	pass # Replace with function body.

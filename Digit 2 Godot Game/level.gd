@@ -16,3 +16,20 @@ func _input(event : InputEvent):
 	if(event.is_action_pressed("ui_cancel")):
 		var current_value : bool = get_tree().paused
 		game_paused = !game_paused
+
+func _process(delta):
+	if Input.is_action_just_pressed("esc"):
+		get_tree().paused =not get_tree().paused
+		$PauseMenu.visible = not $PauseMenu.visible
+
+
+
+func _on_exit_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://menu.tscn")
+
+
+
+func _on_next_level_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://level_2.tscn")
