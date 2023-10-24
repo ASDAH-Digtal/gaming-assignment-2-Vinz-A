@@ -59,6 +59,11 @@ text = "Double Jump: SpaceBar"
 layout_mode = 2
 text = "Pickup Rubbish: Run Headfirst into it"
 
+[node name="Pause" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Pause: Esc
+"
+
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Back"

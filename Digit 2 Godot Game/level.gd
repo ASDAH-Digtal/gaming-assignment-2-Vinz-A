@@ -17,10 +17,7 @@ func _input(event : InputEvent):
 		var current_value : bool = get_tree().paused
 		game_paused = !game_paused
 
-func _process(delta):
-	if Input.is_action_just_pressed("esc"):
-		get_tree().paused =not get_tree().paused
-		$PauseMenu.visible = not $PauseMenu.visible
+
 
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://lhd3vn82ho8k"]
+[gd_scene load_steps=13 format=3 uid="uid://lhd3vn82ho8k"]
 
 [ext_resource type="Texture2D" uid="uid://bdediabdi1e5n" path="res://Ugly eclipse.png" id="1_4c24k"]
 [ext_resource type="Script" path="res://level_3.gd" id="1_8eh7t"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://wkkhkvwa82a1" path="res://Grass block (original).png" id="3_sny0g"]
 [ext_resource type="Texture2D" uid="uid://dolumjixrfhhs" path="res://Dirt (Ugly still).png" id="4_bxpmn"]
 [ext_resource type="PackedScene" uid="uid://b8kci7y14vyww" path="res://apple.tscn" id="6_idiy5"]
+[ext_resource type="Script" path="res://true_pause_menu.gd" id="8_3ff1t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4pwey"]
 texture = ExtResource("1_bss02")
@@ -1574,17 +1575,65 @@ position = Vector2(-27, -347)
 [node name="apple5" parent="." instance=ExtResource("6_idiy5")]
 position = Vector2(172.548, 314.421)
 
-[node name="PauseMenu" type="Node2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("8_3ff1t")
+
+[node name="pausemenu123" type="Control" parent="CanvasLayer"]
+process_mode = 3
 visible = false
-position = Vector2(-1000, 500)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/pausemenu123"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.247059)
 
-[node name="Exit" type="Button" parent="PauseMenu/VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/pausemenu123"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/pausemenu123/CenterContainer"]
+custom_minimum_size = Vector2(400, 180)
 layout_mode = 2
-text = "Exit
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/pausemenu123/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/pausemenu123/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/pausemenu123/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/pausemenu123/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="CanvasLayer/pausemenu123/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Resume 
 "
 
-[connection signal="pressed" from="PauseMenu/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[node name="Quit" type="Button" parent="CanvasLayer/pausemenu123/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[connection signal="pressed" from="CanvasLayer/pausemenu123/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Resume" to="CanvasLayer" method="_on_resume_pressed" flags=18]
+[connection signal="pressed" from="CanvasLayer/pausemenu123/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Quit" to="CanvasLayer" method="_on_quit_pressed" flags=18]
