@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3464xhpmweah"]
+
+[ext_resource type="Texture2D" uid="uid://bf53shhge5eiv" path="res://Check.png" id="1_3cq5f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rt36p"]
+
+[node name="Pickcup_Trash" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, 0)
+scale = Vector2(0.8125, 0.84375)
+texture = ExtResource("1_3cq5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_rt36p")
