@@ -40,16 +40,16 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "          Jumping 4 Rubbish Game         "
+text = "          Rage As You Jump 4 Rubbish        "
 horizontal_alignment = 1
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Play"
+text = "Play and get ready to rage"
 
 [node name="Controls" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Controls"
+text = "Controls: (you will need it)"
 
 [node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -57,7 +57,12 @@ text = "Credits"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+text = "Quit (if you are a loser)"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "              Every Jump is possible
+            So if u mad (#skill issue)"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
